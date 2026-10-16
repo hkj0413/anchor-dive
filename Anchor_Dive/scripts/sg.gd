@@ -2,12 +2,12 @@ extends CharacterBody2D
 
 signal prototype_event(text: String)
 
-const SGVisualScript = preload("res://prototype_sg/scripts/sg_visual.gd")
-const TracerScript = preload("res://prototype_sg/scripts/tracer.gd")
-const ShotAudio = preload("res://prototype_sg/audio/sg_attack.wav")
-const RecoilAudio = preload("res://prototype_sg/audio/sg_recoil.wav")
-const ReloadAudio = preload("res://prototype_sg/audio/sg_reload.wav")
-const ShieldAudio = preload("res://prototype_sg/audio/sg_shield.wav")
+const SGVisualScript = preload("res://scripts/sg_visual.gd")
+const TracerScript = preload("res://scripts/tracer.gd")
+const ShotAudio = preload("res://audio/sg_attack.wav")
+const RecoilAudio = preload("res://audio/sg_recoil.wav")
+const ReloadAudio = preload("res://audio/sg_reload.wav")
+const ShieldAudio = preload("res://audio/sg_shield.wav")
 
 # Prototype dimensions at the 1920x1080 reference resolution.
 const COLLIDER_SIZE := Vector2(48, 110)
@@ -47,6 +47,10 @@ var _shield_was_active := false
 
 var aim_dir := Vector2.RIGHT
 var spawn_position := Vector2.ZERO
+# Physics snapshots are read only by the presentation loop.
+var _previous_physics_position := Vector2.ZERO
+var _current_physics_position := Vector2.ZERO
+var _camera_look_offset := Vector2(0, -180)
 
 var visual
 var camera: Camera2D
@@ -68,10 +72,19 @@ func _ready() -> void:
     add_child(collision)
 
     visual = SGVisualScript.new()
+    # The manually interpolated visual must not inherit the physics body's transform.
+    visual.top_level = true
+    visual.physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
+    visual.process_priority = 20
     add_child(visual)
 
     camera = Camera2D.new()
-    camera.position = Vector2(0, -180)
+    camera.top_level = true
+    camera.physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
+    camera.process_callback = Camera2D.CAMERA2D_PROCESS_IDLE
+    # Player presentation -> camera scroll -> visual aim, all in the same frame.
+    camera.process_priority = 10
+    camera.position = global_position + _camera_look_offset
     camera.position_smoothing_enabled = true
     camera.position_smoothing_speed = 8.0
     camera.limit_left = 0
@@ -85,6 +98,7 @@ func _ready() -> void:
     recoil_audio = _make_audio_player(RecoilAudio, -4.0)
     reload_audio = _make_audio_player(ReloadAudio, -8.0)
     shield_audio = _make_audio_player(ShieldAudio, -9.0)
+    _reset_presentation()
 
 func _make_audio_player(stream: AudioStream, volume_db: float) -> AudioStreamPlayer2D:
     var player := AudioStreamPlayer2D.new()
@@ -95,6 +109,7 @@ func _make_audio_player(stream: AudioStream, volume_db: float) -> AudioStreamPla
     return player
 
 func _physics_process(delta: float) -> void:
+    _previous_physics_position = _current_physics_position
     _update_aim()
     _update_timers(delta)
     _update_shield(delta)
@@ -107,9 +122,13 @@ func _physics_process(delta: float) -> void:
     if global_position.y > 1280.0:
         global_position = spawn_position
         velocity = Vector2.ZERO
+        _reset_presentation()
         emit_signal("prototype_event", "낙하 리셋")
 
-    _update_visual_and_camera(delta)
+    _current_physics_position = global_position
+
+func _process(delta: float) -> void:
+    _update_presentation(delta)
 
 func _update_aim() -> void:
     var shoulder := global_position + Vector2(0, -116)
@@ -273,11 +292,29 @@ func _spawn_tracer(from: Vector2, to: Vector2, tint: Color, line_width: float) -
     get_tree().current_scene.add_child(tracer)
     tracer.setup(from, to, tint, 0.09, line_width)
 
-func _update_visual_and_camera(delta: float) -> void:
+func _reset_presentation() -> void:
+    # Teleports must not interpolate across the level or leave the camera behind.
+    _previous_physics_position = global_position
+    _current_physics_position = global_position
+    reset_physics_interpolation()
     if visual:
-        visual.aim_dir = aim_dir
+        visual.global_position = global_position
+    if camera:
+        _camera_look_offset = Vector2(0, -180)
+        camera.global_position = global_position + _camera_look_offset
+        camera.reset_smoothing()
+
+func _update_presentation(delta: float) -> void:
+    var fraction := clampf(Engine.get_physics_interpolation_fraction(), 0.0, 1.0)
+    var render_position := _previous_physics_position.lerp(_current_physics_position, fraction)
+    if visual:
+        visual.global_position = render_position
         visual.shield_active = shield_active
 
     if camera:
-        var target := Vector2(aim_dir.x * 165.0, -180.0 + aim_dir.y * 90.0)
-        camera.position = camera.position.lerp(target, 1.0 - exp(-8.0 * delta))
+        # Sample mouse input every rendered frame; never write gameplay aim_dir here.
+        var raw := get_global_mouse_position() - (render_position + Vector2(0, -116))
+        var look_dir := raw.normalized() if raw.length_squared() > 0.001 else aim_dir
+        var target := Vector2(look_dir.x * 165.0, -180.0 + look_dir.y * 90.0)
+        _camera_look_offset = _camera_look_offset.lerp(target, 1.0 - exp(-8.0 * delta))
+        camera.global_position = render_position + _camera_look_offset

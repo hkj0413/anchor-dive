@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const CrosshairScript = preload("res://prototype_sg/scripts/crosshair.gd")
+const CrosshairScript = preload("res://scripts/crosshair.gd")
 
 var player = null
 var ammo_label: Label

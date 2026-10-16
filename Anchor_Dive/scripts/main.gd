@@ -1,7 +1,7 @@
 extends Node2D
 
-const SGScript = preload("res://prototype_sg/scripts/sg.gd")
-const HudScript = preload("res://prototype_sg/scripts/hud.gd")
+const SGScript = preload("res://scripts/sg.gd")
+const HudScript = preload("res://scripts/hud.gd")
 
 var player: CharacterBody2D
 

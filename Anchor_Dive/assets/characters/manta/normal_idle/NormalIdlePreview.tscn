@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/characters/manta/normal_idle/Manta_NormalIdle.tscn" id="1_manta"]
+
+[node name="NormalIdlePreview" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+mouse_filter = 2
+color = Color(0.075, 0.1, 0.14, 1)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 60.0
+theme_override_font_sizes/font_size = 36
+text = "MANTA / NORMAL IDLE"
+
+[node name="GameSizeLabel" type="Label" parent="."]
+offset_left = 420.0
+offset_top = 920.0
+theme_override_font_sizes/font_size = 24
+text = "180px / 2 second loop"
+
+[node name="DetailLabel" type="Label" parent="."]
+offset_left = 1100.0
+offset_top = 920.0
+theme_override_font_sizes/font_size = 24
+text = "2x detail"
+
+[node name="GameSize" parent="." instance=ExtResource("1_manta")]
+position = Vector2(540, 860)
+
+[node name="Detail" parent="." instance=ExtResource("1_manta")]
+position = Vector2(1200, 860)
+scale = Vector2(1.0404624, 1.0404624)

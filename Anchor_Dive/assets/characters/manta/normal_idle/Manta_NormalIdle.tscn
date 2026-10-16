@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="SpriteFrames" path="res://assets/characters/manta/normal_idle/Manta_NormalIdle.tres" id="1_frames"]
+
+[node name="MantaNormalIdle" type="AnimatedSprite2D"]
+scale = Vector2(0.5202312, 0.5202312)
+sprite_frames = ExtResource("1_frames")
+animation = &"Normal_Idle"
+autoplay = "Normal_Idle"
+centered = false
+offset = Vector2(-256, -460)

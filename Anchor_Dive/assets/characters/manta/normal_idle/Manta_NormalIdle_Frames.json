@@ -1,0 +1,212 @@
+{
+  "sheet": "Manta_NormalIdle_Sheet.png",
+  "sheet_size": [
+    1774,
+    887
+  ],
+  "canvas_size": [
+    512,
+    512
+  ],
+  "pivot": [
+    256,
+    460
+  ],
+  "animation": "Normal_Idle",
+  "duration_seconds": 2.0,
+  "frames": [
+    {
+      "frame": 1,
+      "region": [
+        0,
+        0,
+        443,
+        443
+      ],
+      "draw_offset": [
+        47.0,
+        36
+      ],
+      "alpha_bbox": [
+        105,
+        78,
+        385,
+        424
+      ],
+      "foot_anchor": [
+        209.0,
+        424
+      ],
+      "duration_seconds": 0.25
+    },
+    {
+      "frame": 2,
+      "region": [
+        443,
+        0,
+        444,
+        443
+      ],
+      "draw_offset": [
+        46.5,
+        36
+      ],
+      "alpha_bbox": [
+        106,
+        78,
+        386,
+        424
+      ],
+      "foot_anchor": [
+        209.5,
+        424
+      ],
+      "duration_seconds": 0.25
+    },
+    {
+      "frame": 3,
+      "region": [
+        887,
+        0,
+        443,
+        443
+      ],
+      "draw_offset": [
+        47.0,
+        36
+      ],
+      "alpha_bbox": [
+        106,
+        80,
+        386,
+        424
+      ],
+      "foot_anchor": [
+        209.0,
+        424
+      ],
+      "duration_seconds": 0.25
+    },
+    {
+      "frame": 4,
+      "region": [
+        1330,
+        0,
+        444,
+        443
+      ],
+      "draw_offset": [
+        46.0,
+        36
+      ],
+      "alpha_bbox": [
+        106,
+        80,
+        386,
+        424
+      ],
+      "foot_anchor": [
+        210.0,
+        424
+      ],
+      "duration_seconds": 0.25
+    },
+    {
+      "frame": 5,
+      "region": [
+        0,
+        443,
+        443,
+        444
+      ],
+      "draw_offset": [
+        47.0,
+        43
+      ],
+      "alpha_bbox": [
+        105,
+        73,
+        385,
+        417
+      ],
+      "foot_anchor": [
+        209.0,
+        417
+      ],
+      "duration_seconds": 0.25
+    },
+    {
+      "frame": 6,
+      "region": [
+        443,
+        443,
+        444,
+        444
+      ],
+      "draw_offset": [
+        46.5,
+        43
+      ],
+      "alpha_bbox": [
+        106,
+        73,
+        386,
+        417
+      ],
+      "foot_anchor": [
+        209.5,
+        417
+      ],
+      "duration_seconds": 0.25
+    },
+    {
+      "frame": 7,
+      "region": [
+        887,
+        443,
+        443,
+        444
+      ],
+      "draw_offset": [
+        46.5,
+        43
+      ],
+      "alpha_bbox": [
+        106,
+        73,
+        386,
+        417
+      ],
+      "foot_anchor": [
+        209.5,
+        417
+      ],
+      "duration_seconds": 0.25
+    },
+    {
+      "frame": 8,
+      "region": [
+        1330,
+        443,
+        444,
+        444
+      ],
+      "draw_offset": [
+        46.5,
+        43
+      ],
+      "alpha_bbox": [
+        106,
+        73,
+        386,
+        417
+      ],
+      "foot_anchor": [
+        209.5,
+        417
+      ],
+      "duration_seconds": 0.25
+    }
+  ],
+  "status": "motion_draft_v01"
+}
