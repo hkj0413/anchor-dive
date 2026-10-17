@@ -1,0 +1,237 @@
+[gd_resource type="SpriteFrames" load_steps=34 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/manta/normal_idle_regrip/Manta_NormalIdle_Regrip_32f_Atlas.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="Frame_01_Source_001"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_02_Source_016"]
+atlas = ExtResource("1")
+region = Rect2(352, 0, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_03_Source_020"]
+atlas = ExtResource("1")
+region = Rect2(704, 0, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_04_Source_025"]
+atlas = ExtResource("1")
+region = Rect2(1056, 0, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_05_Source_028"]
+atlas = ExtResource("1")
+region = Rect2(1408, 0, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_06_Source_030"]
+atlas = ExtResource("1")
+region = Rect2(1760, 0, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_07_Source_033"]
+atlas = ExtResource("1")
+region = Rect2(2112, 0, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_08_Source_036"]
+atlas = ExtResource("1")
+region = Rect2(2464, 0, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_09_Source_042"]
+atlas = ExtResource("1")
+region = Rect2(0, 464, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_10_Source_048"]
+atlas = ExtResource("1")
+region = Rect2(352, 464, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_11_Source_053"]
+atlas = ExtResource("1")
+region = Rect2(704, 464, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_12_Source_056"]
+atlas = ExtResource("1")
+region = Rect2(1056, 464, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_13_Source_059"]
+atlas = ExtResource("1")
+region = Rect2(1408, 464, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_14_Source_062"]
+atlas = ExtResource("1")
+region = Rect2(1760, 464, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_15_Source_065"]
+atlas = ExtResource("1")
+region = Rect2(2112, 464, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_16_Source_068"]
+atlas = ExtResource("1")
+region = Rect2(2464, 464, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_17_Source_071"]
+atlas = ExtResource("1")
+region = Rect2(0, 928, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_18_Source_074"]
+atlas = ExtResource("1")
+region = Rect2(352, 928, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_19_Source_078"]
+atlas = ExtResource("1")
+region = Rect2(704, 928, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_20_Source_082"]
+atlas = ExtResource("1")
+region = Rect2(1056, 928, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_21_Source_091"]
+atlas = ExtResource("1")
+region = Rect2(1408, 928, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_22_Source_102"]
+atlas = ExtResource("1")
+region = Rect2(1760, 928, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_23_Source_109"]
+atlas = ExtResource("1")
+region = Rect2(2112, 928, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_24_Source_110"]
+atlas = ExtResource("1")
+region = Rect2(2464, 928, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_25_Source_111"]
+atlas = ExtResource("1")
+region = Rect2(0, 1392, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_26_Source_112"]
+atlas = ExtResource("1")
+region = Rect2(352, 1392, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_27_Source_113"]
+atlas = ExtResource("1")
+region = Rect2(704, 1392, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_28_Source_114"]
+atlas = ExtResource("1")
+region = Rect2(1056, 1392, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_29_Source_120"]
+atlas = ExtResource("1")
+region = Rect2(1408, 1392, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_30_Source_130"]
+atlas = ExtResource("1")
+region = Rect2(1760, 1392, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_31_Source_139"]
+atlas = ExtResource("1")
+region = Rect2(2112, 1392, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Frame_32_Source_144"]
+atlas = ExtResource("1")
+region = Rect2(2464, 1392, 352, 464)
+margin = Rect2(96, 24, 160, 48)
+filter_clip = true
+
+[resource]
+resource_name = "Manta Normal Idle / 32 frames / v02 artwork"
+animations = [{
+"frames": [
+{"duration": 12.0, "texture": SubResource("Frame_01_Source_001")},
+{"duration": 6.0, "texture": SubResource("Frame_02_Source_016")},
+{"duration": 5.0, "texture": SubResource("Frame_03_Source_020")},
+{"duration": 3.0, "texture": SubResource("Frame_04_Source_025")},
+{"duration": 3.0, "texture": SubResource("Frame_05_Source_028")},
+{"duration": 2.0, "texture": SubResource("Frame_06_Source_030")},
+{"duration": 3.0, "texture": SubResource("Frame_07_Source_033")},
+{"duration": 5.0, "texture": SubResource("Frame_08_Source_036")},
+{"duration": 5.0, "texture": SubResource("Frame_09_Source_042")},
+{"duration": 5.0, "texture": SubResource("Frame_10_Source_048")},
+{"duration": 5.0, "texture": SubResource("Frame_11_Source_053")},
+{"duration": 3.0, "texture": SubResource("Frame_12_Source_056")},
+{"duration": 3.0, "texture": SubResource("Frame_13_Source_059")},
+{"duration": 3.0, "texture": SubResource("Frame_14_Source_062")},
+{"duration": 3.0, "texture": SubResource("Frame_15_Source_065")},
+{"duration": 3.0, "texture": SubResource("Frame_16_Source_068")},
+{"duration": 3.0, "texture": SubResource("Frame_17_Source_071")},
+{"duration": 3.0, "texture": SubResource("Frame_18_Source_074")},
+{"duration": 5.0, "texture": SubResource("Frame_19_Source_078")},
+{"duration": 4.0, "texture": SubResource("Frame_20_Source_082")},
+{"duration": 12.0, "texture": SubResource("Frame_21_Source_091")},
+{"duration": 12.0, "texture": SubResource("Frame_22_Source_102")},
+{"duration": 1.0, "texture": SubResource("Frame_23_Source_109")},
+{"duration": 1.0, "texture": SubResource("Frame_24_Source_110")},
+{"duration": 1.0, "texture": SubResource("Frame_25_Source_111")},
+{"duration": 1.0, "texture": SubResource("Frame_26_Source_112")},
+{"duration": 1.0, "texture": SubResource("Frame_27_Source_113")},
+{"duration": 1.0, "texture": SubResource("Frame_28_Source_114")},
+{"duration": 10.0, "texture": SubResource("Frame_29_Source_120")},
+{"duration": 10.0, "texture": SubResource("Frame_30_Source_130")},
+{"duration": 9.0, "texture": SubResource("Frame_31_Source_139")},
+{"duration": 1.0, "texture": SubResource("Frame_32_Source_144")}
+],
+"loop": true,
+"name": &"Normal_Idle_Regrip",
+"speed": 30.0
+}]
